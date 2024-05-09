@@ -1,0 +1,38 @@
+.log {
+	position: relative;
+	border-radius: 1%;
+	border-color: black;
+	margin: 0 30% 0 30%;
+	padding: 0.5%;
+	align-items: center;
+}
+
+.titulo {
+	background-color: aquamarine;
+}
+
+.panel {
+	float: left;
+	margin-top: auto;
+	margin-left: 0.5%;
+	background-color: beige;
+	padding: 0.5%;
+}
+
+.info {
+	background-color: aqua;
+	margin-left: 18%;
+	padding: 0.5%;
+}
+
+.pedidos {
+	float: left;
+}
+
+.mb-3 {
+	align-self: center;
+}
+
+.fechas {
+	float: right;
+}

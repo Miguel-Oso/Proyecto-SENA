@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+{% extends "mainPage.html" %}
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Crear despacho</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="estilos.css" />
+	</head>
+	<body>
+		{% block page_content %}
+		<header>
+			<h1>Despachos</h1>
+			<div>Num. de despacho</div>
+		</header>
+		<form action="input" name="despachos">
+			<table class="despachos">
+				<div class="mb-3">
+					<label for="pedido" class="form-label">Numero de pedido</label>
+					<input class="form-control" type="text" id="pedido" />
+				</div>
+				<div class="mb-3">
+					<label for="nombre" class="form-label"
+						>Nombre o Razon social</label
+					>
+					<input class="form-control" type="text" id="nombre" />
+				</div>
+				<div class="mb-3">
+					<label for="ciudad" class="form-label">Ciudad</label>
+					<input class="form-control" type="text" id="ciudad" />
+				</div>
+				<div class="mb-3">
+					<label for="direccion" class="form-label">Dirección</label>
+					<input class="form-control" type="text" id="direccion" />
+				</div>
+				<div class="mb-3">
+					<label for="tipo-identificacion" class="form-label"
+						>Tipo de identificación</label
+					>
+					<select name="tipo-identificacion" id="identificacion">
+						<option value="nit">NIT</option>
+						<option value="cc">CC</option>
+						<option value="ce">CE</option>
+						<option value="rut">RUT</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="num-identificacion" class="form-label"
+						>Número de identificación</label
+					>
+					<input
+						class="form-control"
+						type="text"
+						id="num-identificacion"
+					/>
+				</div>
+				<div class="mb-3">
+					<label for="correo" class="form-label">Correo electrónico</label>
+					<input class="form-control" type="text" id="correo" />
+				</div>
+				<div class="mb-3">
+					<label for="telefono" class="form-label">Teléfono</label>
+					<input class="form-control" type="text" id="telefono" />
+				</div>
+			</table>
+			<table class="fechas">
+				<thead>
+					<tr>
+						<th scope="col">Fecha del pedido</th>
+						<th scope="col">Fecha de recibido</th>
+						<th scope="col">Fecha del despacho</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input type="date" name="fechaPedido" id="fechaPedido" />
+						</td>
+						<td>
+							<input
+								type="date"
+								name="fechaRecibido"
+								id="fechaRecibido"
+							/>
+						</td>
+						<td>
+							<input
+								type="date"
+								name="fechaDespacho"
+								id="fechaDespacho"
+							/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Producto</th>
+						<th scope="col">Descripción</th>
+						<th scope="col">Unidad</th>
+						<th scope="col">Cantidad</th>
+						<th scope="col">Precio unitario</th>
+						<th scope="col">Total</th>
+						<th scope="col">Precio total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td><input type="text" value="Producto" /></td>
+						<td><input type="text" value="descripcion" /></td>
+						<td><input type="text" value="unidad" /></td>
+						<td><input type="text" value="cantidad" /></td>
+						<td><input type="text" value="precio-unitario" /></td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td><input type="text" value="Producto" /></td>
+						<td><input type="text" value="descripcion" /></td>
+						<td><input type="text" value="unidad" /></td>
+						<td><input type="text" value="cantidad" /></td>
+						<td><input type="text" value="precio-unitario" /></td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td><input type="text" value="Producto" /></td>
+						<td><input type="text" value="descripcion" /></td>
+						<td><input type="text" value="unidad" /></td>
+						<td><input type="text" value="cantidad" /></td>
+						<td><input type="text" value="precio-unitario" /></td>
+					</tr>
+					<tr>
+						<th scope="row">Observaciones</th>
+						<td><input type="text" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+		<button>Crear despacho</button>
+		{% endblock %}
+	</body>
+</html>

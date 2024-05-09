@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+{% extends "mainPage.html" %}
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Crear usuario</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="estilos.css" />
+	</head>
+
+	<body>
+		{% block page_content %}
+		<header>
+			<h1>Cliente</h1>
+			<div>Num. cliente</div>
+		</header>
+		<form action="input" name="cliente">
+			<table class="fechas">
+				<thead>
+					<tr>
+						<th scope="col">Fecha del pedido</th>
+						<th scope="col">Fecha de recibido</th>
+						<th scope="col">Fecha del despacho</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input type="date" name="fechaPedido" id="fechaPedido" />
+						</td>
+						<td>
+							<input
+								type="date"
+								name="fechaRecibido"
+								id="fechaRecibido"
+							/>
+						</td>
+						<td>
+							<input
+								type="date"
+								name="fechaDespacho"
+								id="fechaDespacho"
+							/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="cliente">
+				<tr>
+					<th scope="row">Primer nombre</th>
+					<td><input type="text" value="nombre" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Segundo nombre</th>
+					<td><input type="text" value="nombre" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Primer apellido</th>
+					<td><input type="text" value="apellido" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Segundo apellido</th>
+					<td><input type="text" value="apellido" /></td>
+				</tr>
+				<div class="mb-3">
+					<label for="tipo-identificacion" class="form-label"
+						>Tipo de identificación</label
+					>
+					<select name="tipo-identificacion" id="identificacion">
+						<option value="nit">NIT</option>
+						<option value="cc">CC</option>
+						<option value="ce">CE</option>
+						<option value="rut">RUT</option>
+					</select>
+				</div>
+				<tr>
+					<th scope="row">Número de identificación</th>
+					<td><input type="text" value="num-identificacion" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Ciudad</th>
+					<td><input type="text" value="ciudad" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Dirección</th>
+					<td><input type="text" value="direccion" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Correo electrónico</th>
+					<td><input type="text" value="correo" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Teléfono</th>
+					<td><input type="text" value="telefono" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Contraseña</th>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<th scope="row">Comentarios</th>
+					<td><input type="text" /></td>
+				</tr>
+			</table>
+		</form>
+		<button>Crear usuario</button>
+		{% endblock %}
+	</body>
+</html>
