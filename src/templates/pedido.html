@@ -1,0 +1,33 @@
+{% extends "mainPage.html" %} {% block estilos %}
+<link
+	rel="stylesheet"
+	href="{{url_for('static', filename='estilos/formatos.css')}}"
+/>
+{% endblock %} {% block page_content %}
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">ID Artículo</th>
+			<th scope="col">Descripción</th>
+			<th scope="col">Cant.</th>
+			<th scope="col">Precio Unitario</th>
+			<th scope="col">Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td><input type="text" value="articulo" name="articulo" /></td>
+			<td>
+				<input type="text" value="descripcion" name="descripcion" />
+			</td>
+			<td><input type="text" value="cantidad" name="cantidad" /></td>
+			<td><input type="text" value="precio-unitario" name="precio" /></td>
+		</tr>
+	</tbody>
+</table>
+<textarea type="text">Comentarios</textarea><br />
+
+{% endblock %}

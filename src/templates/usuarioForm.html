@@ -1,0 +1,82 @@
+{% extends "mainPage.html" %} {% block title %}<title>Crear usuario</title> {%
+endblock %} {% block estilos %}
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous"
+/>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"
+></script>
+<link rel="stylesheet" href="estilos.css" />
+{% endblock %} {% block page_content %}
+<header>
+	<h1>Usuario Nuevo</h1>
+	<div>Usuario Nuevo</div>
+</header>
+<form action="register" method="post">
+	<div>
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" required />
+		<br />
+		<label for="password">Contraseña</label>
+		<input type="password" id="password" name="password" required />
+		<br />
+		<label for="nombre">Primer nombre</label>
+		<input type="text" id="nombre" name="first_name" required />
+		<br />
+		<label for="nombre">Segundo nombre</label>
+		<input type="text" id="nombre" name="second_name" required />
+		<br />
+		<label for="apellido">Primer apellido</label>
+		<input type="text" id="apellido" name="first_surname" required />
+		<br />
+		<label for="apellido">Segundo apellido</label>
+		<input type="text" id="apellido" name="second_surname" required />
+		<br />
+		<label for="tipo_documento">Tipo de documento</label>
+		<select name="tipo_documento" id="tipo_documento">
+			<option selected value="">Seleccionar</option>
+			{% for tipoId in tipo_documento %}
+			<option value="{{tipoId.value}}">{{tipoId.name}}</option>
+			{% endfor %}
+		</select>
+		<label for="num_documento">No. documento</label>
+		<input type="text" name="documento" id="num_documento" />
+		<br />
+		<label for="email">Correo electrónico</label>
+		<input type="email" id="email" name="email" required />
+		<br />
+		<label for="telefono">Teléfono</label>
+		<input type="text" id="telefono" name="phone" required />
+		<br />
+		<label for="direccion">Dirección</label>
+		<input type="text" id="direccion" name="address" required />
+		<br />
+		<label for="ciudad">Ciudad</label>
+		<input type="text" id="ciudad" name="city" required />
+		<br />
+		<label for="pais">País</label>
+		<input type="text" id="pais" name="country" required />
+		<br />		
+		<label for="rol">Rol</label>
+		<select name="rol" id="rol">
+			<option selected value="">Seleccionar</option>
+			{% for rol in roles %}
+			<option value="{{rol.value}}">{{rol.name}}</option>
+			{% endfor %}
+		</select>
+		<br />
+		<label for="estado">Estado</label>
+		<select name="status" id="estado">
+			<option selected value="">Seleccionar</option>
+			{% for estado in estados %}
+			<option value="{{estado.value}}">{{estado.name}}</option>
+			{% endfor %}
+			</div>
+		<button type="submit">Crear usuario</button>
+</form>
+{% endblock %}

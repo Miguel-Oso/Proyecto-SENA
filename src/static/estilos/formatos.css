@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding: 1%;
+	margin: 0;
+}
+.titulo {
+	width: 80%;
+	text-align: center;
+}
+
+.num-pedido {
+	width: 20%;
+	margin: 1%;
+	padding: 1%;
+	font-size: 1.2em;
+}
+
+.container {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+table {
+	padding: 1%;
+	width: 100%;
+}
+
+.pedidos {
+	margin: 1%;
+	padding: 1% 0;
+	width: 75%;
+}
+
+input {
+	width: auto;
+	height: auto;
+	box-shadow: #868585 1px 1px 1px;
+	border: none;
+}
+
+.fechas {
+	margin: 1%;
+	width: 25%;
+}
+.table thead th {
+	background-color: #7f7f7f;
+	color: white;
+}
+
+.table thead td {
+	background-color: #f2f2f2;
+}
+
+textarea {
+	margin: 1%;
+	padding: 1%;
+	width: 100%;
+	width: 80%;
+	height: 5%;
+	box-shadow: #868585 1px 1px 1px;
+	border: none;
+	clear: both;
+}
+
+.btn-estilos {
+	margin: 1%;
+	padding: 1%;
+	text-emphasis: bold;
+	background-color: #7f7f7f;
+	color: white;
+	border: none;
+}

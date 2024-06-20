@@ -1,0 +1,108 @@
+{% extends "mainPage.html" %} <title>Crear Despacho</title>
+{% endblock} {% block estilos %}
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous"
+/>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"
+></script>
+<link rel="stylesheet" href="formatos.css" />
+{% endblock %} {% block page_content %}
+<header>
+	<h1 class="titulo">Crear Despacho</h1>
+	<div class="num-pedido">Num. de despacho</div>
+</header>
+<form action="input" name="pedidos" method="post">
+	<div class="container">
+		<div class="pedidos">
+			<label for="num-orden-compra" class="form-label"
+				>Número de orden de compra</label
+			>
+			<input class="form-control" type="text" id="num-orden-compra" /><br />
+			<label for="tipo-identificacion" class="form-label"
+				>Tipo de identificación</label
+			>
+			<select name="tipo-identificacion" id="identificacion">
+				<option value="nit">NIT</option>
+				<option value="cc">CC</option>
+				<option value="ce">CE</option>
+				<option value="rut">RUT</option>
+			</select>
+			<label for="num-identificacion" class="form-label"
+				>Número de identificación</label
+			>
+			<input class="form-control" type="text" id="num-identificacion" />
+			<br />
+			<label for="nombre" class="form-label">Nombre o Razon social</label>
+			<input class="form-control" type="text" id="formFile" /><br />
+			<label for="ciudad" class="form-label">Ciudad</label>
+			<input class="form-control" type="text" id="ciudad" /><br />
+			<label for="direccion" class="form-label">Dirección</label>
+			<input class="form-control" type="text" id="direccion" /><br />
+			<label for="correo" class="form-label">Correo electrónico</label>
+			<input class="form-control" type="text" id="correo" /><br />
+			<label for="telefono" class="form-label">Teléfono</label>
+			<input class="form-control" type="text" id="telefono" /><br />
+		</div>
+		<div class="fechas">
+			<label for="fechaRecibido" class="form-label">Fecha de recibido</label>
+			<input class="form-control" type="date" id="fechaRecibido" /><br />
+			<label for="fechaDocumento" class="form-label"
+				>Fecha del Documento</label
+			>
+			<input class="form-control" type="date" id="fechaDocumento" /><br />
+			<label for="fechaDespacho" class="form-label"
+				>Fecha del despacho</label
+			>
+			<input class="form-control" type="date" id="fechaDespacho" />
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Producto</th>
+				<th scope="col">Descripción</th>
+				<th scope="col">Unidad</th>
+				<th scope="col">Cantidad</th>
+				<th scope="col">Precio unitario</th>
+				<th scope="col">Total</th>
+				<th scope="col">Precio total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td><input type="text" value="Producto" /></td>
+				<td><input type="text" value="descripcion" /></td>
+				<td><input type="text" value="unidad" /></td>
+				<td><input type="text" value="cantidad" /></td>
+				<td><input type="text" value="precio-unitario" /></td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td><input type="text" value="Producto" /></td>
+				<td><input type="text" value="descripcion" /></td>
+				<td><input type="text" value="unidad" /></td>
+				<td><input type="text" value="cantidad" /></td>
+				<td><input type="text" value="precio-unitario" /></td>
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td><input type="text" value="Producto" /></td>
+				<td><input type="text" value="descripcion" /></td>
+				<td><input type="text" value="unidad" /></td>
+				<td><input type="text" value="cantidad" /></td>
+				<td><input type="text" value="precio-unitario" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<textarea type="text">Comentarios</textarea><br />
+	<input class="btn-estilos" type="submit" value="Enviar" />
+</form>
+{% endblock %}

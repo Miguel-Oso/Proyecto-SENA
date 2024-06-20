@@ -1,0 +1,107 @@
+{% extends "mainPage.html" %} {% block title %}
+<title>Pedidos</title>
+{% endblock %} {% block estilos %}
+<link
+	rel="stylesheet"
+	href="{{url_for('static', filename='estilos/formatos.css')}}"
+/>
+{% endblock %} {% block page_content %}
+<header>
+	<h1 class="titulo">Pedidos</h1>
+	<div class="num-pedido">Num. Pedido</div>
+</header>
+<form action="agregar_pedidos" name="pedido" method="post">
+	<div class="container">
+		<div class="pedidos">
+			<label for="num-orden-compra" class="form-label"
+				>Número de orden de compra</label
+			>
+			<input
+				class="form-control"
+				type="text"
+				id="num-orden-compra"
+				name="orden_compra"
+			/><br />
+			<label for="tipo_documento" class="form-label">Tipo documento</label>
+			<select name="tipo_documento" id="tipo_documento">
+				<option selected value="">seleccionar</option>
+				{% for td in tiposIdentificacion %}
+				<option value="{{td.value}}">{{td.name}}</option>
+				{% endfor %}
+			</select>
+
+			<label for="num_documento" class="form-label"
+				>Número de documento</label
+			>
+			<input
+				class="form-control"
+				type="text"
+				id="num_documento"
+				name="documento"
+			/><br />
+			<label for="cliente" class="form-label">Cliente</label>
+			<select class="form-control" id="cliente" name="cliente">
+				<option selected value="">seleccionar</option>
+				{% for c in cliente %}
+				<option value="{{c.id}}">{{c.nombre}}</option>
+				{% endfor %}
+			</select>
+			<br />
+		</div>
+		<div class="fechas">
+			<label for="fechaPedido" class="form-label">Fecha del pedido</label>
+			<input
+				class="form-control"
+				type="date"
+				id="fechaPedido"
+				name="fecha_pedido"
+			/><br />
+			<label for="fechaRecibido" class="form-label"
+				>Fecha de documento</label
+			>
+			<input
+				class="form-control"
+				type="date"
+				id="fechaRecibido"
+				name="fecha_recibido"
+			/><br />
+			<label for="fechaDespacho" class="form-label"
+				>Fecha del despacho</label
+			>
+			<input
+				class="form-control"
+				type="date"
+				id="fechaDespacho"
+				name="fecha_despacho"
+			/>
+		</div>
+	</div>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">ID Artículo</th>
+				<th scope="col">Descripción</th>
+				<th scope="col">Cant.</th>
+				<th scope="col">Precio Unitario</th>
+				<th scope="col">Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td><input type="text" value="articulo" name="articulo" /></td>
+				<td>
+					<input type="text" value="descripcion" name="descripcion" />
+				</td>
+				<td><input type="text" value="cantidad" name="cantidad" /></td>
+				<td><input type="text" value="precio-unitario" name="precio" /></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<textarea type="text">Comentarios</textarea><br />
+	<button class="btn-estilos" type="submit">Guardar</button>
+</form>
+
+{% endblock %}
