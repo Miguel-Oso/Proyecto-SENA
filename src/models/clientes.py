@@ -3,6 +3,9 @@ from src.models import Base, session
 from sqlalchemy import Column, Integer, String, Enum
 from src.models.enums.tipo_documento import TipoDocumento
 
+# importo para crear relaciones
+from sqlalchemy.orm import relationship 
+
 class Cliente(Base):
     __tablename__ = 'clientes'
     id = Column(Integer, primary_key=True)
@@ -13,6 +16,9 @@ class Cliente(Base):
     direccion = Column(String(45), nullable=False)
     correo = Column(String(30), unique=True, nullable=False)
     telefono = Column(String(20), unique=True, nullable=False)
+
+    # Relacion con la tabla pedidos
+    pedidos = relationship('Pedido', backref='cliente')
 
     def __init__(self, tipo_documento, documento, nombre, ciudad, direccion, correo, telefono):
         self.tipo_documento = tipo_documento
