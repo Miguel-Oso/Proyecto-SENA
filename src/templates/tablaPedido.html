@@ -39,21 +39,20 @@
 		</tr>
 	</thead>
 	<tbody>
+		{% for p in pedidos %}
 		<tr>
-			{% for p in pedidos %}
 			<th scope="row">{{p.id}}</th>
-			<td>{{p.name}}</td>
+			<td>{{p.cliente.nombre}}</td>
 			<td>{{p.descripcion}}</td>
 			<td>{{p.cantidad}}</td>
 			<td>{{p.precio}}</td>
-			{% endfor %}
 			<td>
 				<button type="button" class="btn btn-info">Detalle</button>
 				<button type="button" class="btn btn-danger">Borrar</button>
 			</td>
 		</tr>
+		{% endfor %}
 	</tbody>
 </table>
-<textarea type="text">Comentarios</textarea><br />
 
 {% endblock %}
