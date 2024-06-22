@@ -21,11 +21,7 @@ class PedidoController(FlaskController):
             cantidad = float(request.form.get('cantidad'))
             precio = float(request.form.get('precio'))
             comentarios = request.form.get('comentarios')
-            print(comentarios)
-            info_usuario = Cliente.get_by_documento(documento)
-            cliente_id = info_usuario[0].id
-            print(repr(info_usuario))
-            pedido_nuevo = Pedido(orden_compra, fecha_pedido, fecha_documento, fecha_despacho, cliente_id, articulo, descripcion, cantidad, precio, comentarios)
+            pedido_nuevo = Pedido(orden_compra, fecha_pedido, fecha_documento, fecha_despacho, documento, articulo, descripcion, cantidad, precio, comentarios)
             Pedido.agregar_pedido(pedido_nuevo)
             return redirect(url_for('pedidos'))
         cliente = Cliente.get_all()
