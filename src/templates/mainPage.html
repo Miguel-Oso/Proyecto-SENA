@@ -55,20 +55,142 @@
 										>Home</a
 									>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="{{ url_for('pedidos') }}"
-										>Pedido</a
-									>
-								</li>
-								<li class="nav-item">
-									<a
-										class="nav-link disabled"
-										href="#"
-										tabindex="-1"
-										aria-disabled="true"
-										>Materiales</a
-									>
-								</li>
+								<button
+									class="navbar-toggler"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarNavDarkDropdown"
+									aria-controls="navbarNavDarkDropdown"
+									aria-expanded="false"
+									aria-label="Toggle navigation"
+								>
+									<span class="navbar-toggler-icon"></span>
+								</button>
+								<div
+									class="collapse navbar-collapse"
+									id="navbarNavDarkDropdown"
+								>
+									<ul class="navbar-nav">
+										<li class="nav-item dropdown">
+											<a
+												class="nav-link dropdown-toggle"
+												href="{{ url_for('agregar_pedidos') }}"
+												id="navbarDarkDropdownMenuLink"
+												role="button"
+												data-bs-toggle="dropdown"
+												aria-expanded="false"
+											>
+												Pedido
+											</a>
+											<ul
+												class="dropdown-menu dropdown-menu-dark"
+												aria-labelledby="navbarDarkDropdownMenuLink"
+											>
+												<li>
+													<a
+														class="dropdown-item"
+														href="{{ url_for('agregar_pedidos') }}"
+														>Crear</a
+													>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#"
+														>Actualizar</a
+													>
+												</li>
+												<li>
+													<a
+														class="dropdown-item"
+														href="{{ url_for('pedidos') }}"
+														>Consultar</a
+													>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="collapse navbar-collapse"
+									id="navbarNavDarkDropdown"
+								>
+									<ul class="navbar-nav">
+										<li class="nav-item dropdown">
+											<a
+												class="nav-link dropdown-toggle"
+												href="{{ url_for('agregar_material') }}"
+												id="navbarDarkDropdownMenuLink2"
+												role="button"
+												data-bs-toggle="dropdown"
+												aria-expanded="false"
+											>
+												Materiales
+											</a>
+											<ul
+												class="dropdown-menu dropdown-menu-dark"
+												aria-labelledby="navbarDarkDropdownMenuLink"
+											>
+												<li>
+													<a
+														class="dropdown-item"
+														href="{{ url_for('agregar_material') }}"
+														>Crear</a
+													>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#"
+														>Actualizar</a
+													>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#"
+														>Consultar</a
+													>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="collapse navbar-collapse"
+									id="navbarNavDarkDropdown"
+								>
+									<ul class="navbar-nav">
+										<li class="nav-item dropdown">
+											<a
+												class="nav-link dropdown-toggle"
+												href="{{ url_for('clientes') }}"
+												id="navbarDarkDropdownMenuLink3"
+												role="button"
+												data-bs-toggle="dropdown"
+												aria-expanded="false"
+											>
+												Clientes
+											</a>
+											<ul
+												class="dropdown-menu dropdown-menu-dark"
+												aria-labelledby="navbarDarkDropdownMenuLink"
+											>
+												<li>
+													<a
+														class="dropdown-item"
+														href="{{ url_for('clientes') }}"
+														>Crear</a
+													>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#"
+														>Actualizar</a
+													>
+												</li>
+												<li>
+													<a class="dropdown-item" href="#"
+														>Consultar</a
+													>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
 							</ul>
 							<form class="d-flex">
 								<input
