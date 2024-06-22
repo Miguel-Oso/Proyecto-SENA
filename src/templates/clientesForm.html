@@ -5,12 +5,14 @@
 	rel="stylesheet"
 	href="{{url_for('static', filename='estilos/form-validation.css')}}"
 />
+<link
+	rel="stylesheet"
+	href="{{url_for('static', filename='estilos/formatos.css')}}"
+/>
 {% endblock %} {% block page_content %}
 <header>
-	<h1 class="mb-3">Cliente</h1>
-	<div>
-		{% for cliente in clientes %} Num. cliente {{ cliente.id }} {% endfor %}
-	</div>
+	<h1 class="titulo">Cliente</h1>
+	<div class="num-pedido">Num. Cliente</div>
 </header>
 <form action="clientes" name="cliente" method="post">
 	<div class="col-md-7 col-lg-8">
@@ -26,7 +28,6 @@
 						<option value="{{ tipo.value }}">{{ tipo.name }}</option>
 						{% endfor %}
 					</select>
-					<br />
 					<label for="num_doc" class="form-label">No. Documento</label>
 					<input
 						type="text"
@@ -38,6 +39,7 @@
 						required
 					/>
 				</div>
+
 				<div class="col-md-4">
 					<label for="firstName" class="form-label">Nombre</label>
 					<input
@@ -110,7 +112,7 @@
 			</div>
 			<br />
 			<button
-				class="w-100 btn btn-primary btn-lg"
+				class="btn btn-primary btn-lg"
 				type="submit"
 				href="{{url_for('pedidos')}}"
 			>
